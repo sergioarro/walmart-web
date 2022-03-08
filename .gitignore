@@ -4,6 +4,7 @@ node_modules
 .node-version
 build
 .tmp
+.DS_Store
 npm-debug*
 .nyc_output
 coverage
