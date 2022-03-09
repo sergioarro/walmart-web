@@ -45,7 +45,7 @@ class SearchResults extends React.PureComponent {
                             className="walmart-sales-price d-flex "
                             style={{ display: "flex", alignItems: "center" }}
                           >
-                            $ {result.price.toLocaleString('es-CL')}
+                            $ { result && result.price ? result.price.toLocaleString('es-CL') : 0 }
                             {result.priceBeforeDiscount && result.priceBeforeDiscount != 0 ? (
                               <div
                                 className="walmart-discount-percentage-card"
@@ -60,7 +60,7 @@ class SearchResults extends React.PureComponent {
                           {result.priceBeforeDiscount && result.priceBeforeDiscount != 0 ? (
                             <div className="d-flex">
                               <span className="walmart-reference-price">
-                                $ {result.priceBeforeDiscount.toLocaleString('es-CL')}
+                                $ { result && result.priceBeforeDiscount ? result.priceBeforeDiscount.toLocaleString('es-CL') : 0 }
                               </span>
                             </div>
                           ) : (
