@@ -1,5 +1,4 @@
 import React from "react";
-import "jsdom-global/register";
 import { shallow } from "enzyme";
 import Search from "../../../../src/Components/Search/Search";
 import axios from "axios";

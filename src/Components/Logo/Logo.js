@@ -4,7 +4,7 @@ import logo from "../../assets/img/logo-lider.svg";
 class Logo extends React.Component {
   render() {
     return (
-      <div className="logo" style={{ "padding-left" : "100px" }}>
+      <div className="logo" style={{ paddingLeft : "100px" }}>
         <a href="/catalogo">
           <img
             src={logo}

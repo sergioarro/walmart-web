@@ -92,8 +92,8 @@
         "build": "webpack --config webpack.dist.config.js --progress --color",
         "docker:build": "docker build -t walmart-web .",
         "docker:run": "npm run docker:build && docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:8080 walmart-web",
-        "test:unit": "npm run jest -- test/unit",
-        "test:integration": "npm run jest -- test/integration"
+        "test:unit": "jest -- test/unit",
+        "test:integration": "jest -- test/integration"
     },
     "browserslist": [
         "last 2 versions",

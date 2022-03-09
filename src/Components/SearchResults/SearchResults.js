@@ -1,8 +1,6 @@
 import React from "react";
 import ImageResult from "../ImageResult/ImageResult";
 import AddButton from "../Buttons/AddButton";
-import DeliveryButton from "../Buttons/DeliveryButton";
-import RetreatButton from "../Buttons/RetreatButton";
 
 class SearchResults extends React.PureComponent {
   render() {
@@ -47,8 +45,8 @@ class SearchResults extends React.PureComponent {
                             className="walmart-sales-price d-flex "
                             style={{ display: "flex", alignItems: "center" }}
                           >
-                            $ {result.price}
-                            {result.priceBeforeDiscount != 0 ? (
+                            $ {result.price.toLocaleString('es-CL')}
+                            {result.priceBeforeDiscount && result.priceBeforeDiscount != 0 ? (
                               <div
                                 className="walmart-discount-percentage-card"
                                 style={{ marginTop: "1px", marginLeft: "6px" }}
@@ -59,23 +57,15 @@ class SearchResults extends React.PureComponent {
                               ""
                             )}
                           </div>
-                          {result.priceBeforeDiscount != 0 ? (
+                          {result.priceBeforeDiscount && result.priceBeforeDiscount != 0 ? (
                             <div className="d-flex">
                               <span className="walmart-reference-price">
-                                {result.priceBeforeDiscount}
+                                $ {result.priceBeforeDiscount.toLocaleString('es-CL')}
                               </span>
                             </div>
                           ) : (
                             ""
                           )}
-                          <div
-                            className="d-flex"
-                            style={{ position: "absolute", bottom: "56px" }}
-                          >
-                            <RetreatButton />
-                            <div>&nbsp;</div>
-                            <DeliveryButton />
-                          </div>
                           <AddButton />
                         </div>
                       </div>

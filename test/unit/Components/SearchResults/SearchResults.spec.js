@@ -25,7 +25,7 @@ describe("Search Results ", () => {
   const wrapper = shallow(<SearchResults results={results} />);
 
   it("should be mount correctly", () => {
-    expect(wrapper.find("div").length).toBe(21);
+    expect(wrapper.find("div").length).toBe(17);
   });
 
   it("should be two li", () => {
@@ -63,7 +63,7 @@ describe("Search Results ", () => {
       '<div class="walmart-sales-price d-flex " style="display:flex;align-items:center">$ 1500<div class="walmart-discount-percentage-card" style="margin-top:1px;margin-left:6px">50%</div></div>'
     );
     expect(secondLi.find("span.walmart-reference-price").html()).toBe(
-      '<span class="walmart-reference-price">3000</span>'
+      '<span class="walmart-reference-price">$ 3000</span>'
     );
   });
 });
