@@ -64,7 +64,7 @@ module.exports = {
     historyApiFallback: true,
     port: process.env.PORT || 8080,
     host: "localhost",
-    allowedHosts: ["localhost"],
+    allowedHosts: ["all"]
   },
   externals: ["window"],
   plugins: [

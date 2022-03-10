@@ -41,7 +41,6 @@
         "css-mqpacker": "^7.0.0",
         "cssnano": "^4.1.10",
         "cssnano-preset-advanced": "^4.0.7",
-        "cypress": "^3.1.5",
         "ejs": "^2.7.4",
         "ejs-loader": "^0.5.0",
         "enzyme": "^3.9.0",
@@ -50,7 +49,6 @@
         "eslint-config-airbnb": "^17.1.0",
         "eslint-config-prettier": "^4.1.0",
         "eslint-import-resolver-webpack": "^0.11.0",
-        "eslint-plugin-cypress": "^2.2.1",
         "eslint-plugin-import": "^2.16.0",
         "eslint-plugin-jsx-a11y": "^6.2.1",
         "eslint-plugin-react": "^7.12.4",
@@ -91,9 +89,9 @@
         "start:docker": "webpack-dev-server --host 0.0.0.0 --port 8080 --config ./webpack.config.js --open --color",
         "build": "webpack --config webpack.dist.config.js --progress --color",
         "docker:build": "docker build -t walmart-web .",
-        "docker:run": "npm run docker:build && docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:8080 walmart-web",
-        "test:unit": "npm run jest -- test/unit",
-        "test:integration": "npm run jest -- test/integration"
+        "docker:run": "npm run docker:build && docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 8080:8080 walmart-web",
+        "test:unit": "jest -- test/unit",
+        "test:integration": "jest -- test/integration"
     },
     "browserslist": [
         "last 2 versions",

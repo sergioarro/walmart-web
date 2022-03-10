@@ -27,7 +27,15 @@ class Search extends React.Component {
    *
    */
   fetchSearchResults = (query) => {
-    const searchUrl = Configuration.API_URL + query;
+    let endpoint = query && query.length ? 'product/' + query : 'products';
+    if (typeof query === 'string' && isNaN(query)){
+      if (query.length > 3)
+        endpoint = 'productdiscount/' + query
+      else 
+        return false;
+    }
+    
+    const searchUrl = Configuration.API_URL + endpoint;
 
     if (this.cancel) {
       this.cancel.cancel();
@@ -41,7 +49,7 @@ class Search extends React.Component {
       })
       .then((res) => {
         const resultNotFoundMsg =
-          res.data === null || res.data === ""
+          !res.data || res.data === ""
             ? "Producto No disponible"
             : "Se encontraron " + res.data.length + " resultado para " + query;
         this.setState({
@@ -60,6 +68,7 @@ class Search extends React.Component {
 
   handleOnInputChange = (event) => {
     const query = event.target.value;
+
     if (!query) {
       this.setState({
         query,
